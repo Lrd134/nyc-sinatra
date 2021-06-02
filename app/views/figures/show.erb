@@ -1,0 +1,13 @@
+<h1>Figure <a href="/figures/<%=@figure.id%>/edit"><%=@figure.name%></a></h1>
+<%@figure.titles.each do |title|%>
+<p><%=title.name%></p>
+<%end%>
+Big Tower
+<%@figure.landmarks.each do |landmarks|%>
+  <p><%=landmarks.name%></p>
+  <%end%>
+  
+<form action="/figures/<%=@figure.id%>" method="POST">
+<input type="hidden" value="DELETE" name="_method"/>
+<input type="submit" value="Delete <%=@figure.name%>" id="submit"/>
+</form>
