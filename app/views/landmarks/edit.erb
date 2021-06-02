@@ -1,6 +1,17 @@
 <h2>Edit Historical Landmark</h2>
 
 <!-- add content here -->
+<h3> Now Editing: </h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year Completed</th>
+  </tr>
+  <tr>
+    <td><%= @landmark.name %></td>
+    <td><%= @landmark.year_completed %></td>
+  </tr>
+<table>
 
 <a class="button" href="/landmarks">Landmarks</a>
 <a class="button" href="/">Home</a>
