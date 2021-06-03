@@ -6,12 +6,25 @@
   <tr>
     <th>Name</th>
     <th>Year Completed</th>
+    <th>Figure Name<th>
   </tr>
   <tr>
     <td><%= @landmark.name %></td>
     <td><%= @landmark.year_completed %></td>
+    <td><%= @landmark.figure_id ? @figure.name : "Figure not found"%></td>
   </tr>
-<table>
-
+<table><br><br>
+<form action="/landmarks/<%=@landmark.id%>" method="POST">
+<input type="hidden" value="PATCH" name="_method"/>
+<label for="landmark_name">Landmark Name:</label>
+<input type="text" name="landmark[name]" id="name"/><br>
+<label for="landmark_year_completed">Landmark Year Completed:</label>
+<input type="text" name="landmark[year_completed]" id="year_completed"/><br>
+<%@figures.each do |figure|%>
+  <input type="radio" name="landmark[figure_id]" value="<%=figure.id%>" id="figure_<%=figure.id%>"><%=figure.name%></input><br>
+<%end%><br><br>
+<input type="text" name="figure[name]" id="figure_name"/>
+<input type="submit" id="submit" value="Edit Landmark"/>
+</form>
 <a class="button" href="/landmarks">Landmarks</a>
 <a class="button" href="/">Home</a>

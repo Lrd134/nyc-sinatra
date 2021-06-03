@@ -8,10 +8,10 @@
 <input typ="text" name="landmark[year_completed]" id="landmark_year_completed"/><br>
 <p><strong>Existing Figures:</strong><p>
 <%@figures.each do |figure|%>
-  <input type="radio" id="figure_<%=figure.id%>"name="figure_id"value="<%=figure.id%>"><%=figure.name%></input><br>
+  <input type="radio" id="figure_<%=figure.id%>"name="landmark[figure_id]"value="<%=figure.id%>"><%=figure.name%></input><br>
 <%end%><br><br>
 <label for="new_figure">New Figure:</label>
-<input type="text" name="landmark[figure][name]" id="new_figure"/><br>
+<input type="text" name="figure[name]" id="new_figure"/><br>
 <input type="submit" value="Create New Landmark" id="submit"/>
 </form>
 <a class="button" href="/landmarks">Landmarks</a>
